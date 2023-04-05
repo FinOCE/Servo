@@ -1,7 +1,7 @@
 using System;
 using System.Numerics;
 
-namespace Bot.Utilities.Processed.Packet
+namespace Servo.Utilities.Processed.Packet
 {
     public class Orientation
     {

@@ -1,4 +1,4 @@
-namespace Bot.Utilities
+namespace Servo.Utilities
 {
     public static class DataConversion
     {

@@ -1,6 +1,6 @@
-using Bot.Utilities.Processed.Packet;
+using Servo.Utilities.Processed.Packet;
 
-namespace Bot.Utilities.Processed.BallPrediction
+namespace Servo.Utilities.Processed.BallPrediction
 {
     public struct PredictionSlice
     {

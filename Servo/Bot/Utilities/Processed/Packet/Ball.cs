@@ -1,4 +1,4 @@
-namespace Bot.Utilities.Processed.Packet
+namespace Servo.Utilities.Processed.Packet
 {
     public class Ball
     {

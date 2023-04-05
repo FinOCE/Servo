@@ -1,4 +1,4 @@
-namespace Bot.Utilities.Processed.BallPrediction
+namespace Servo.Utilities.Processed.BallPrediction
 {
     /// <summary>
     /// Processed version of the <see cref="rlbot.flat.BallPrediction"/> that uses sane data structures.

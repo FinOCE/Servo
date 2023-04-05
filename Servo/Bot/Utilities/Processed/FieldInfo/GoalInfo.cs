@@ -1,6 +1,6 @@
 using System.Numerics;
 
-namespace Bot.Utilities.Processed.FieldInfo
+namespace Servo.Utilities.Processed.FieldInfo
 {
     public struct GoalInfo
     {

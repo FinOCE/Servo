@@ -1,4 +1,4 @@
-namespace Bot.Utilities.Processed.FieldInfo
+namespace Servo.Utilities.Processed.FieldInfo
 {
     /// <summary>
     /// Processed version of the <see cref="rlbot.flat.FieldInfo"/> that uses sane data structures.
