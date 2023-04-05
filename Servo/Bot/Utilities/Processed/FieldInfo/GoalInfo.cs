@@ -1,18 +1,17 @@
-using System.Numerics;
+namespace Servo.Utilities.Processed.FieldInfo;
 
-namespace Servo.Utilities.Processed.FieldInfo
+public struct GoalInfo
 {
-    public struct GoalInfo
-    {
-        public Vector3 Direction;
-        public Vector3 Location;
-        public int TeamNum;
+    public Vector3 Direction;
+    
+    public Vector3 Location;
+    
+    public int TeamNum;
 
-        public GoalInfo(rlbot.flat.GoalInfo goalInfo)
-        {
-            Direction = goalInfo.Direction.Value.ToVector3();
-            Location = goalInfo.Location.Value.ToVector3();
-            TeamNum = goalInfo.TeamNum;
-        }
+    public GoalInfo(rlbot.flat.GoalInfo goalInfo)
+    {
+        Direction = goalInfo.Direction!.Value.ToVector3();
+        Location = goalInfo.Location!.Value.ToVector3();
+        TeamNum = goalInfo.TeamNum;
     }
 }

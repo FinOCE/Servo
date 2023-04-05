@@ -1,16 +1,14 @@
-using Servo.Utilities.Processed.Packet;
+namespace Servo.Utilities.Processed.BallPrediction;
 
-namespace Servo.Utilities.Processed.BallPrediction
+public struct PredictionSlice
 {
-    public struct PredictionSlice
-    {
-        public Physics Physics;
-        public float GameSeconds;
+    public Physics Physics;
+    
+    public float GameSeconds;
 
-        public PredictionSlice(rlbot.flat.PredictionSlice predictionSlice)
-        {
-            Physics = new Physics(physics: predictionSlice.Physics.Value);
-            GameSeconds = predictionSlice.GameSeconds;
-        }
+    public PredictionSlice(rlbot.flat.PredictionSlice predictionSlice)
+    {
+        Physics = new(predictionSlice.Physics!.Value);
+        GameSeconds = predictionSlice.GameSeconds;
     }
 }

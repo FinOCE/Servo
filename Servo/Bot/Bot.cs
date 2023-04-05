@@ -2,25 +2,18 @@
 
 public class ServoBot : RLBotDotNet.Bot
 {
-    // We want the constructor for our Bot to extend from RLBotDotNet.Bot, but we don't want to add anything to it.
-    // You might want to add logging initialisation or other types of setup up here before the bot starts.
     public ServoBot(string botName, int botTeam, int botIndex) : base(botName, botTeam, botIndex) { }
 
     public override Controller GetOutput(rlbot.flat.GameTickPacket gameTickPacket)
     {
-        // We process the gameTickPacket and convert it to our own internal data structure.
         Packet packet = new(gameTickPacket);
-        
-        // Get the data required to drive to the ball.
+
         Vector3 ballLocation = packet.Ball.Physics.Location;
         Vector3 carLocation = packet.Players[Index].Physics.Location;
         Orientation carRotation = packet.Players[Index].Physics.Rotation;
 
-        // Find where the ball is relative to us.
         Vector3 ballRelativeLocation = Orientation.RelativeLocation(carLocation, ballLocation, carRotation);
 
-        // Decide which way to steer in order to get to the ball.
-        // If the ball is to our left, we steer left. Otherwise we steer right.
         float steer;
         if (ballRelativeLocation.Y > 0)
             steer = 1;
@@ -32,17 +25,13 @@ public class ServoBot : RLBotDotNet.Bot
         Renderer.DrawString3D(steer > 0 ? "Right" : "Left", Color.Aqua, carLocation, 3, 3);
         Renderer.DrawLine3D(Color.Red, carLocation, ballLocation);
 
-        // This controller will contain all the inputs that we want the bot to perform.
         return new Controller
         {
-            // Set the throttle to 1 so the bot can move.
             Throttle = 1,
             Steer = steer
         };
     }
-
-    // Hide the old methods that return Flatbuffers objects and use our own methods that
-    // use processed versions of those objects instead.
     internal new FieldInfo GetFieldInfo() => new(base.GetFieldInfo());
+
     internal new BallPrediction GetBallPrediction() => new(base.GetBallPrediction());
 }

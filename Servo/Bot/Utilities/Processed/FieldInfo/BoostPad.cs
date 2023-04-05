@@ -1,16 +1,14 @@
-using System.Numerics;
+namespace Servo.Utilities.Processed.FieldInfo;
 
-namespace Servo.Utilities.Processed.FieldInfo
+public struct BoostPad
 {
-    public struct BoostPad
-    {
-        public Vector3 Location;
-        public bool IsFullBoost;
+    public Vector3 Location;
+    
+    public bool IsFullBoost;
 
-        public BoostPad(rlbot.flat.BoostPad boostPad)
-        {
-            Location = boostPad.Location.Value.ToVector3();
-            IsFullBoost = boostPad.IsFullBoost;
-        }
+    public BoostPad(rlbot.flat.BoostPad boostPad)
+    {
+        Location = boostPad.Location!.Value.ToVector3();
+        IsFullBoost = boostPad.IsFullBoost;
     }
 }
