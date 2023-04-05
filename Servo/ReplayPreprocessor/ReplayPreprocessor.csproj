@@ -11,4 +11,8 @@
     <PackageReference Include="RocketLeagueReplayParser" Version="3.4.2" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Replays\Output\" />
+  </ItemGroup>
+
 </Project>
