@@ -1,8 +1,10 @@
 ﻿global using RLBotDotNet;
+global using RLBotDotNet.GameState;
 global using Servo;
 global using Servo.Utilities;
 global using Servo.Utilities.Processed.BallPrediction;
 global using Servo.Utilities.Processed.FieldInfo;
 global using Servo.Utilities.Processed.Packet;
+global using Servo.Utilities.Training;
 global using System.Drawing;
 global using System.Numerics;
